@@ -1,0 +1,19 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- rule: rule for unknown 
+  steps:
+  - intent: unknown_answer
+  - action: utter_please_rephrase
+
+#- rule: Say 'I am a ' anytime the user challenges
+#  steps:
+ # - intent: bot_challenge
+  #- action: utter_iamabot

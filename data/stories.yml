@@ -1,0 +1,55 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: bot
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: confirm_positive
+  steps:
+  - intent: confirm_positive
+  - action: utter_confirm_positive
+
+- story: confirm_negative
+  steps:
+  - intent: confirm_negative
+  - action: utter_confirm_negative
+
+- story: unknown_answer
+  steps:
+  - intent: unknown_answer
+  - action: utter_please_rephrase 
+
+#- story: order_pdf
+ # steps:
+  #- intent: show_pdf
+  #- action: utter_show_pdf
+
+
+- story: hiring_posts (query)
+  steps: 
+  - intent: inform
+  - slot_was_set :
+    - query_position: "positions"
+  - action: PositionType 
+
+
+
+

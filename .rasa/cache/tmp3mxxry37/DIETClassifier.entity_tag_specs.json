@@ -1,0 +1,20 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-query_position",
+      "2": "I-query_position",
+      "3": "L-query_position",
+      "4": "U-query_position",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-query_position": 1,
+      "I-query_position": 2,
+      "L-query_position": 3,
+      "U-query_position": 4,
+      "O": 0
+    },
+    "num_tags": 5
+  }
+]

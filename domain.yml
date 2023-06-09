@@ -1,0 +1,94 @@
+version: "3.1"
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+intents:
+  - greet
+  - thanks
+  - goodbye
+  - show_pdf
+  - confirm_positive
+  - confirm_negative
+  - bot_challenge
+  - unknown_answer
+  - inform:
+      use_entities: true 
+  #- ask_position:
+     # use_entities: true
+  - inform_date:
+      use_entities: true
+  - inform_qualif:
+      use_entities: true
+  
+  
+
+
+
+entities:
+  - query_position
+  - position_type
+  - query_date
+  - query_qualif
+  
+  
+slots:
+    query_position:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: query_position
+    query_date:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: query_date
+    query_qualif:
+      type: text
+      mappings:
+      - type: from_entity
+        entity: query_qualif
+    
+      influence_conversation: false
+
+
+responses:
+  utter_greet:
+  - text: "നമസ്കാരം"
+
+  #utter_show_pdf:
+  #- text: "ഉത്തരവ് കാണുന്നതിനായി താഴെയുള്ള ലിങ്കിൽ ക്ലിക്ക് ചെയ്യുക: https://www.document.kerala.gov.in/documents/governmentorders/govtorder0901202318:05:02.pdf "
+ #   image: "https://www.document.kerala.gov.in/documents/governmentorders/govtorder0901202318:05:02.pdf"
+
+
+  utter_thanks:
+  - text: "നന്ദി ! വീണ്ടു വരിക!"
+ 
+  utter_goodbye:
+  - text: "നന്ദി"
+
+  utter_confirm_positive:
+  - text: "നന്ദി"
+
+  utter_confirm_negative:
+  - text: "ചോദ്യം ഒന്നുകൂടി ആവർത്തിക്കാമോ?"
+
+  utter_please_rephrase:
+  - text: "ക്ഷമിക്കണം.താങ്കളുടെ ചോദ്യം വ്യക്തമാക്കൂ"
+  
+
+  utter_iamabot:
+  - text: "ഞാൻ ഒരു ബോട്ട് ആണ്"
+
+
+actions:
+  - PositionType
+  - JoiningDate
+  - JobQualif
+  
+forms: {}
+e2e_actions: []
+
